@@ -3,6 +3,7 @@
     --section_margin_x: 0.5rem;
     --section_margin_y: 1.5rem;
     --action_section_padding: 1rem;
+    --audio_margin: 0.5rem;
 
     --darkmode_toggle_width: 56px;
     --darkmode_toggle_padding: 0.5rem;
@@ -134,6 +135,7 @@ section:nth-of-type(1) {
 
 .audio > audio {
     width: 100%;
+    margin-bottom: var(--audio_margin);
 }
 
 .audio_download {
@@ -172,4 +174,20 @@ a {
 #wikipedia > a > svg {
     display: block;
     margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#podcast {
+    display: none;
 }
