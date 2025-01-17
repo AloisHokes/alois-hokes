@@ -17,6 +17,8 @@
     --color_white: #FFFFFF;
     --color_black: #222222;
 
+    --galery_gap: 0.5rem;
+
     font-size: 16px;
 }
 
@@ -108,21 +110,13 @@ label {
     width: 100%;
 }
 
-section {
-    margin: var(--section_margin_y) var(--section_margin_x);
-}
-
 section:last-child {
     margin-bottom: 0;
 }
 
-section:nth-of-type(1) {
-    margin-top: var(--section_margin_x);
-}
-
 #portrait {
-    margin: calc(-1 * var(--section_margin_x));
-    width: calc(100% + var(--section_margin_x) * 2);
+    /* margin: calc(-1 * var(--section_margin_x));
+    width: calc(100% + var(--section_margin_x) * 2); */
     border-radius: var(--rounding);
 }
 
@@ -154,6 +148,10 @@ section:nth-of-type(1) {
     padding: var(--action_section_padding);
 }
 
+h1 {
+    margin: 0;
+}
+
 h2 {
     margin: 0; 
 }
@@ -176,7 +174,97 @@ a {
     margin: 0 auto;
 }
 
+.galery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--galery_gap);
+}
 
+.galery > .img_responsive {
+    border-radius: var(--rounding);
+}
+
+.article {
+    display: grid;
+    gap: 1rem;
+    padding: 0.5rem;
+    grid-template-areas: 
+        "header header"
+        "portrait podcast"
+        "portrait description"
+        "portrait personal_life"
+        "music music"
+        "activities activities"
+        "honor honor"
+        "wiki wiki";
+}
+
+.article--header {
+    grid-area: header;
+}
+
+.article--portrait {
+    grid-area: portrait;
+}
+
+.article--description {
+    grid-area: description;
+}
+
+.article--podcast {
+    grid-area: podcast;
+    height: fit-content;
+    margin: 0;
+}
+
+.article--personal_life {
+    grid-area: personal_life;
+}
+
+.article--music {
+    grid-area: music;
+}
+
+.article--activities {
+    grid-area: activities;
+}
+
+.article--honor {
+    grid-area: honor;
+}
+
+.article--wiki {
+    grid-area: wiki;
+}
+
+@media screen and (max-width: 720px) {
+    .article {
+        grid-template-areas: 
+            "header header"
+            "podcast podcast"
+            "description description"
+            "portrait personal_life"
+            "music music"
+            "activities activities"
+            "honor honor"
+            "wiki wiki";
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .article {
+        grid-template-areas: 
+            "header"
+            "podcast"
+            "portrait"
+            "description"
+            "personal_life"
+            "music"
+            "activities"
+            "honor"
+            "wiki";
+    }
+}
 
 
 
