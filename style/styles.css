@@ -4,6 +4,7 @@
     --section_margin_y: 1.5rem;
     --action_section_padding: 1rem;
     --audio_margin: 0.5rem;
+    --footer_padding: 0.5rem;
 
     --darkmode_toggle_width: 48px;
     --darkmode_toggle_padding: 0.5rem;
@@ -196,7 +197,8 @@ a {
         "music music"
         "activities activities"
         "honor honor"
-        "wiki wiki";
+        "wiki wiki"
+        "footer footer";
 }
 
 .article--header {
@@ -237,6 +239,14 @@ a {
     grid-area: wiki;
 }
 
+.article--footer {
+    grid-area: footer;
+    background-color: hsl(from var(--background_color) h s calc(l - var(--background_step)));
+    border-radius: var(--rounding);
+    text-align: center;
+    padding: var(--footer_padding);
+}
+
 @media screen and (max-width: 720px) {
     .article {
         grid-template-areas: 
@@ -247,7 +257,8 @@ a {
             "music music"
             "activities activities"
             "honor honor"
-            "wiki wiki";
+            "wiki wiki"
+            "footer footer";
     }
 }
 
@@ -262,20 +273,7 @@ a {
             "music"
             "activities"
             "honor"
-            "wiki";
+            "wiki"
+            "footer";
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-#podcast {
-    display: none;
 }
